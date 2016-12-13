@@ -5,6 +5,8 @@
   let userName = document.getElementById("user-name"); 
   let nameStored = localStorage.name;
   console.log(`Name on page load: ${nameStored}`);
+ let Clsbutton = document.getElementById("Clsbutton");    
+    
   
   if(nameStored) {
     // If there's a name in localStorage, use it:
@@ -31,6 +33,10 @@
     console.log(`New name stored: ${nameStored}`);
     return false;
   }
+    
+   
+    getName.addEventListener("Clsbutton", localStorage.clear());
+  
 
   // Listens for a form submit action: 
   if (typeof event === "undefined") {
@@ -39,6 +45,5 @@
   else {
     getName.addEventListener("submit", PerformGreeting);
     event.preventDefault();
-  }
-
-}());
+  } 
+} ());
